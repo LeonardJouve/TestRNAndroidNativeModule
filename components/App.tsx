@@ -1,13 +1,15 @@
 import React from 'react';
 import {
-    Button,
+    Text,
     View,
 } from 'react-native';
+import NativeCounter from './NativeCounter';
 
 function App(): JSX.Element {
     return (
         <View>
-            <Button title='test'/>
+            <Text>{'test'}</Text>
+            <NativeCounter text='test'/>
         </View>
     );
 }
