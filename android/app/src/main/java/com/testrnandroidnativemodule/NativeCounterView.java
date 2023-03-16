@@ -7,16 +7,22 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 public class NativeCounterView extends LinearLayout {
+    private Context context;
+    private Button button;
     private TextView textView;
     private TextView exposedTextView;
-    private Button button;
     private Integer count;
 
     public NativeCounterView(Context context) {
         super(context);
-        this.textView = new TextView(context);
-        this.exposedTextView = new TextView(context);
-        this.button = new Button(context);
+        inflate(context, R.layout.native_counter_layout, this);
+        this.context = context;
+        this.button = findViewById(R.id.button);
+        this.textView = findViewById(R.id.textView);
+        this.exposedTextView = findViewById(R.id.exposedTextView);
+
+        this.count = 0;
+        this.textView.setText(String.valueOf(this.count));
 
         this.button.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -24,14 +30,6 @@ public class NativeCounterView extends LinearLayout {
                 incrementCount();
             }
         });
-
-        this.addView(textView);
-        this.addView(exposedTextView);
-        this.addView(button);
-
-        this.count = 0;
-        this.textView.setText(String.valueOf(this.count));
-        this.button.setText("Increment count");
     }
 
     private void incrementCount() {

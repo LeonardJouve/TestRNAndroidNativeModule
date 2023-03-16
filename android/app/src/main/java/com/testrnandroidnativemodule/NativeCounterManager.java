@@ -8,17 +8,10 @@ import com.facebook.react.uimanager.ThemedReactContext;
 import com.facebook.react.uimanager.annotations.ReactProp;
 
 public class NativeCounterManager extends SimpleViewManager<NativeCounterView> {
-    public static final String REACT_CLASS = "NativeCounter";
-    ReactApplicationContext callerContext;
-
-    public NativeCounterManager(ReactApplicationContext reactContext) {
-        callerContext = reactContext;
-    }
-
     @NonNull
     @Override
     public String getName() {
-        return REACT_CLASS;
+        return "NativeCounter";
     }
 
     @NonNull

@@ -16,7 +16,7 @@ public class NativeCounterPackage implements ReactPackage {
     @Override
     public List<ViewManager> createViewManagers(@NonNull ReactApplicationContext reactApplicationContext) {
         return Arrays.<ViewManager>asList(
-                new NativeCounterManager(reactApplicationContext)
+            new NativeCounterManager()
         );
     }
 
