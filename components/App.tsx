@@ -4,11 +4,15 @@ import {
     StyleSheet,
     View,
 } from 'react-native';
+import Toaster from '../modules/Toaster';
 import Counter from './Counter';
 
 function App(): JSX.Element {
     const [test, setTest] = useState('test');
-    const onPress = () => setTest(test + 'test');
+    const onPress = () => {
+        setTest(test + 'test');
+        Toaster.toast(test, 2000);
+    };
     return (
         <View style={style.wrapper}>
             <Button
